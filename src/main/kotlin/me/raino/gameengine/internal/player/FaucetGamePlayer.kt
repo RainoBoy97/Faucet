@@ -2,6 +2,7 @@ package me.raino.gameengine.internal.player
 
 import me.raino.gameengine.api.player.GamePlayer
 import org.spongepowered.api.entity.living.player.Player
+import org.spongepowered.api.text.Text
 import java.util.*
 
 class FaucetGamePlayer(override var handle: Player) : GamePlayer {
@@ -14,5 +15,8 @@ class FaucetGamePlayer(override var handle: Player) : GamePlayer {
         name = handle.name
     }
 
+    override fun sendMessage(vararg texts: Text) {
+        handle.sendMessages(*texts)
+    }
 
 }
